@@ -5,22 +5,6 @@ const Web3 = require('web3');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const _ = require('lodash');
 
-//TESTNET
-// const { bscConstantsTest: bscConstants } = require('./bscConstanst');
-// const PCWR_ABI = require('./abis/pancakeswapRouterTestAbi');
-
-//MAINNET
-const { bscConstants: bscConstants } = require('./bscConstanst');
-const PCWR_ABI = require('./abis/pancakeswapRouterAbi');
-const APESWAP_ROUTER = require('./abis/APESWAP_ROUTER');
-const ICECREAM_ROUTER = require('./abis/ICECREAM_ROUTER');
-const SHASHIMI_ROUTER = require('./abis/SHASHIMI_ROUTER');
-const JULSWAP_ROUTER = require('./abis/JULSWAP_ROUTER');
-const BAKERYSWAP_ROUTER = require('./abis/BAKERYSWAP_ROUTER');
-const HYPERSWAP_ROUTER = require('./abis/HYPERSWAP_ROUTER');
-const CHEESESWAP_ROUTER = require('./abis/CHEESESWAP_ROUTER');
-const BURGERSWAP_ROUTER = require('./abis/BURGERSWAP_ROUTER');
-
 // SERVER CONFIG
 const PORT = process.env.PORT || 5000;
 const app = express();

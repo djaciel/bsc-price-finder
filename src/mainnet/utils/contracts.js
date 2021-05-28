@@ -1,63 +1,67 @@
-//TESTNET
-// const { bscConstantsTest: bscConstants } = require('./bscConstanst');
-// const PCWR_ABI = require('./abis/pancakeswapRouterTestAbi');
+const bscConstants = require('../utils/bscConstanst');
+const PANCAKESWAP_ABI = require('../abis/routers/PANCAKESWAP_ABI');
+const APESWAP_ABI = require('../abis/routers/APESWAP_ABI');
+const ICECREAM_ABI = require('../abis/routers/ICECREAM_ABI');
+const SHASHIMI_ABI = require('../abis/routers/SHASHIMI_ABI');
+const JULSWAP_ABI = require('../abis/routers/JULSWAP_ABI');
+const BAKERYSWAP_ABI = require('../abis/routers/BAKERYSWAP_ABI');
+const HYPERSWAP_ABI = require('../abis/routers/HYPERSWAP_ABI');
+const CHEESESWAP_ABI = require('../abis/routers/CHEESESWAP_ABI');
+const BURGERSWAP_ABI = require('../abis/routers/BURGERSWAP_ABI');
 
-//MAINNET
-const { bscConstants: bscConstants } = require('./bscConstanst');
-const PANCAKESWAP_ABI = require('./abis/PANCAKESWAP_ABI');
-const APESWAP_ABI = require('./abis/APESWAP_ABI');
-const ICECREAM_ABI = require('./abis/ICECREAM_ABI');
-const SHASHIMI_ABI = require('./abis/SHASHIMI_ABI');
-const JULSWAP_ABI = require('./abis/JULSWAP_ABI');
-const BAKERYSWAP_ABI = require('./abis/BAKERYSWAP_ABI');
-const HYPERSWAP_ABI = require('./abis/HYPERSWAP_ABI');
-const CHEESESWAP_ABI = require('./abis/CHEESESWAP_ABI');
-const BURGERSWAP_ABI = require('./abis/BURGERSWAP_ABI');
-
-// BSC PancakeSwap Router Contract
-const pcsrContract = new web3.eth.Contract(
+const PANCAKESWAP_Contract = new web3.eth.Contract(
   PANCAKESWAP_ABI,
-  bscConstants.PANCAKESWAP_ROUTER
+  bscConstants.routers.PANCAKESWAP_ROUTER
 );
 
 const APESWAP_Contract = new web3.eth.Contract(
-  APESWAP_ROUTER,
-  bscConstants.APESWAP_ROUTER
+  APESWAP_ABI,
+  bscConstants.routers.APESWAP_ROUTER
 );
 
 const ICECREAM_Contract = new web3.eth.Contract(
-  ICECREAM_ROUTER,
-  bscConstants.ICECREAM_ROUTER
+  ICECREAM_ABI,
+  bscConstants.routers.ICECREAM_ROUTER
 );
 
 const SHASHIMI_Contract = new web3.eth.Contract(
-  SHASHIMI_ROUTER,
-  bscConstants.SHASHIMI_ROUTER
+  SHASHIMI_ABI,
+  bscConstants.routers.SHASHIMI_ROUTER
 );
 
 const JULSWAP_Contract = new web3.eth.Contract(
-  JULSWAP_ROUTER,
-  bscConstants.JULSWAP_ROUTER
+  JULSWAP_ABI,
+  bscConstants.routers.JULSWAP_ROUTER
 );
 
 const BAKERYSWAP_Contract = new web3.eth.Contract(
-  BAKERYSWAP_ROUTER,
-  bscConstants.BAKERYSWAP_ROUTER
+  BAKERYSWAP_ABI,
+  bscConstants.routers.BAKERYSWAP_ROUTER
 );
 
 const HYPERSWAP_Contract = new web3.eth.Contract(
-  HYPERSWAP_ROUTER,
-  bscConstants.HYPERSWAP_ROUTER
+  HYPERSWAP_ABI,
+  bscConstants.routers.HYPERSWAP_ROUTER
 );
 
 const CHEESESWAP_Contract = new web3.eth.Contract(
-  CHEESESWAP_ROUTER,
-  bscConstants.CHEESESWAP_ROUTER
+  CHEESESWAP_ABI,
+  bscConstants.routers.CHEESESWAP_ROUTER
 );
 
 const BURGERSWAP_Contract = new web3.eth.Contract(
-  BURGERSWAP_ROUTER,
-  bscConstants.BURGERSWAP_ROUTER
+  BURGERSWAP_ABI,
+  bscConstants.routers.BURGERSWAP_ROUTER
 );
 
-module.exports = {};
+module.exports = {
+  PANCAKESWAP_Contract,
+  APESWAP_Contract,
+  ICECREAM_Contract,
+  SHASHIMI_Contract,
+  JULSWAP_Contract,
+  BAKERYSWAP_Contract,
+  HYPERSWAP_Contract,
+  CHEESESWAP_Contract,
+  BURGERSWAP_Contract,
+};
