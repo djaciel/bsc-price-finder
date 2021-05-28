@@ -1,4 +1,4 @@
-const BURGERSWAP_ROUTER = [
+const BURGERSWAP_ABI = [
   {
     anonymous: false,
     inputs: [
@@ -502,4 +502,4 @@ const BURGERSWAP_ROUTER = [
   { stateMutability: 'payable', type: 'receive' },
 ];
 
-module.exports = BURGERSWAP_ROUTER;
+module.exports = BURGERSWAP_ABI;

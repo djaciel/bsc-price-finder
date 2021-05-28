@@ -1,4 +1,4 @@
-const APESWAP_ROUTER = [
+const SHASHIMI_ABI = [
   {
     inputs: [
       { internalType: 'address', name: '_factory', type: 'address' },
@@ -53,6 +53,13 @@ const APESWAP_ROUTER = [
     type: 'function',
   },
   {
+    inputs: [{ internalType: 'address', name: '_owner', type: 'address' }],
+    name: 'changeOwner',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
     inputs: [],
     name: 'factory',
     outputs: [{ internalType: 'address', name: '', type: 'address' }],
@@ -102,6 +109,23 @@ const APESWAP_ROUTER = [
     outputs: [
       { internalType: 'uint256[]', name: 'amounts', type: 'uint256[]' },
     ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: 'pair', type: 'address' },
+      { internalType: 'address', name: 'token', type: 'address' },
+    ],
+    name: 'getTokenInPair',
+    outputs: [{ internalType: 'uint256', name: 'balance', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'owner',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
     type: 'function',
   },
@@ -223,6 +247,15 @@ const APESWAP_ROUTER = [
       { internalType: 'uint256', name: 'amountA', type: 'uint256' },
       { internalType: 'uint256', name: 'amountB', type: 'uint256' },
     ],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: 'vaultAddress', type: 'address' },
+    ],
+    name: 'setVault',
+    outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
   },
@@ -352,7 +385,24 @@ const APESWAP_ROUTER = [
     stateMutability: 'nonpayable',
     type: 'function',
   },
+  {
+    inputs: [
+      { internalType: 'address', name: 'token', type: 'address' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
+    ],
+    name: 'take',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'vault',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
   { stateMutability: 'payable', type: 'receive' },
 ];
 
-module.exports = APESWAP_ROUTER;
+module.exports = SHASHIMI_ABI;

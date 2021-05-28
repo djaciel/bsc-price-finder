@@ -1,4 +1,4 @@
-const CHEESESWAP_ROUTER = [
+const CHEESESWAP_ABI = [
   {
     inputs: [
       { internalType: 'address', name: '_factory', type: 'address' },
@@ -355,4 +355,4 @@ const CHEESESWAP_ROUTER = [
   { stateMutability: 'payable', type: 'receive' },
 ];
 
-module.exports = CHEESESWAP_ROUTER;
+module.exports = CHEESESWAP_ABI;

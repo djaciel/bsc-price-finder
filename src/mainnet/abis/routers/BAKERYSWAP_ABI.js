@@ -1,4 +1,4 @@
-const JULSWAP_ROUTER = [
+const BAKERYSWAP_ABI = [
   {
     inputs: [
       { internalType: 'address', name: '_factory', type: 'address' },
@@ -355,4 +355,4 @@ const JULSWAP_ROUTER = [
   { stateMutability: 'payable', type: 'receive' },
 ];
 
-module.exports = JULSWAP_ROUTER;
+module.exports = BAKERYSWAP_ABI;
