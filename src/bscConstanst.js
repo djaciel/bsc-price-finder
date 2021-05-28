@@ -24,6 +24,7 @@ const bscConstants = {
   WBNB_ADDRESS: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
   USDT_ADDRESS: '0x55d398326f99059ff775485246999027b3197955',
   CAKE_ADDRESS: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+  XVS_ADDRESS: '0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63',
 };
 
 module.exports = { bscConstantsTest, bscConstants };

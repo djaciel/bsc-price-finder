@@ -125,39 +125,39 @@ async function monitorPrice() {
       return;
     });
 
-  ICECREAM_Contract.methods
-    .getAmountsOut('1000000000000000000', [
-      bscConstants.WBNB_ADDRESS,
-      bscConstants.BUSD_ADDRESS,
-    ])
-    .call()
-    .then((res) => {
-      const price = web3.utils.fromWei(res[1], 'Ether');
-      console.log('ICECREAM       - WBNB Price:', price, ' BUSD');
-    })
-    .catch((error) => {
-      console.error(error);
-      monitoringPrice = false;
-      clearInterval(priceMonitor);
-      return;
-    });
+  // ICECREAM_Contract.methods
+  //   .getAmountsOut('1000000000000000000', [
+  //     bscConstants.WBNB_ADDRESS,
+  //     bscConstants.BUSD_ADDRESS,
+  //   ])
+  //   .call()
+  //   .then((res) => {
+  //     const price = web3.utils.fromWei(res[1], 'Ether');
+  //     console.log('ICECREAM       - WBNB Price:', price, ' BUSD');
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //     monitoringPrice = false;
+  //     clearInterval(priceMonitor);
+  //     return;
+  //   });
 
-  SHASHIMI_Contract.methods
-    .getAmountsOut('1000000000000000000', [
-      bscConstants.WBNB_ADDRESS,
-      bscConstants.BUSD_ADDRESS,
-    ])
-    .call()
-    .then((res) => {
-      const price = web3.utils.fromWei(res[1], 'Ether');
-      console.log('SHASHIMI       - WBNB Price:', price, ' BUSD');
-    })
-    .catch((error) => {
-      console.error(error);
-      monitoringPrice = false;
-      clearInterval(priceMonitor);
-      return;
-    });
+  // SHASHIMI_Contract.methods
+  //   .getAmountsOut('1000000000000000000', [
+  //     bscConstants.WBNB_ADDRESS,
+  //     bscConstants.BUSD_ADDRESS,
+  //   ])
+  //   .call()
+  //   .then((res) => {
+  //     const price = web3.utils.fromWei(res[1], 'Ether');
+  //     console.log('SHASHIMI       - WBNB Price:', price, ' BUSD');
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //     monitoringPrice = false;
+  //     clearInterval(priceMonitor);
+  //     return;
+  //   });
 
   JULSWAP_Contract.methods
     .getAmountsOut('1000000000000000000', [
@@ -210,39 +210,39 @@ async function monitorPrice() {
       return;
     });
 
-  CHEESESWAP_Contract.methods
-    .getAmountsOut('1000000000000000000', [
-      bscConstants.WBNB_ADDRESS,
-      bscConstants.BUSD_ADDRESS,
-    ])
-    .call()
-    .then((res) => {
-      const price = web3.utils.fromWei(res[1], 'Ether');
-      console.log('CHEESESWAP     - WBNB Price:', price, ' BUSD');
-    })
-    .catch((error) => {
-      console.error(error);
-      monitoringPrice = false;
-      clearInterval(priceMonitor);
-      return;
-    });
+  // CHEESESWAP_Contract.methods
+  //   .getAmountsOut('1000000000000000000', [
+  //     bscConstants.WBNB_ADDRESS,
+  //     bscConstants.BUSD_ADDRESS,
+  //   ])
+  //   .call()
+  //   .then((res) => {
+  //     const price = web3.utils.fromWei(res[1], 'Ether');
+  //     console.log('CHEESESWAP     - WBNB Price:', price, ' BUSD');
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //     monitoringPrice = false;
+  //     clearInterval(priceMonitor);
+  //     return;
+  //   });
 
-  BURGERSWAP_Contract.methods
-    .getAmountsOut('1000000000000000000', [
-      bscConstants.WBNB_ADDRESS,
-      bscConstants.BUSD_ADDRESS,
-    ])
-    .call()
-    .then((res) => {
-      const price = web3.utils.fromWei(res[1], 'Ether');
-      console.log('BURGERSWAP     - WBNB Price:', price, ' BUSD');
-    })
-    .catch((error) => {
-      console.error(error);
-      monitoringPrice = false;
-      clearInterval(priceMonitor);
-      return;
-    });
+  // BURGERSWAP_Contract.methods
+  //   .getAmountsOut('1000000000000000000', [
+  //     bscConstants.WBNB_ADDRESS,
+  //     bscConstants.BUSD_ADDRESS,
+  //   ])
+  //   .call()
+  //   .then((res) => {
+  //     const price = web3.utils.fromWei(res[1], 'Ether');
+  //     console.log('BURGERSWAP     - WBNB Price:', price, ' BUSD');
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //     monitoringPrice = false;
+  //     clearInterval(priceMonitor);
+  //     return;
+  //   });
 
   monitoringPrice = false;
 }
