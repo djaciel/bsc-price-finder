@@ -30,6 +30,4 @@ const routers = require('./routers');
 
 // priceReader();
 
-Object.keys(tokens).forEach((token) => {
-  PriceFinder.comparePrices(tokens[token], tokens.busd, true);
-});
+PriceFinder.comparePrices(tokens.btcb, tokens.wbnb, true);
