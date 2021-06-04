@@ -17,7 +17,7 @@ const bscConstants = {
     CHEESESWAP_ROUTER: '0x3047799262d8D2EF41eD2a222205968bC9B0d895',
     BURGERSWAP_ROUTER: '0xBf6527834dBB89cdC97A79FCD62E6c08B19F8ec0',
   },
-  factories: { PANCAKESWAP_FACTORY: '' },
+  factories: { PANCAKESWAP_FACTORY: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73' },
   BSC_RPC: 'https://bsc-dataseed.binance.org',
 };
 

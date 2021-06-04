@@ -1,4 +1,4 @@
-const PANCAKESWAP_ABI = [
+const PANCAKESWAP2_ABI = [
   {
     inputs: [
       { internalType: 'address', name: '_factory', type: 'address' },
@@ -339,4 +339,4 @@ const PANCAKESWAP_ABI = [
   { stateMutability: 'payable', type: 'receive' },
 ];
 
-module.exports = PANCAKESWAP_ABI;
+module.exports = PANCAKESWAP2_ABI;

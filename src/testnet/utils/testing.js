@@ -36,7 +36,7 @@ let priceMonitor;
 let iterator = 0;
 
 async function monitorPrice() {
-  PriceFinder.comparePrices(tokens.wbnb, tokens.ada, true);
+  PriceFinder.comparePrices(tokens.wbnb, tokens.busd, true);
 }
 
 priceMonitor = setInterval(async () => {

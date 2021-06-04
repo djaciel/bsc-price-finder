@@ -327,10 +327,10 @@ const tokens = {
     decimals: 17,
     projectLink: 'https://www.1-b.tc/',
   },
-  bscx: {
-    symbol: 'BSCX',
+  safemoon: {
+    symbol: 'SAFEMOON',
     address: {
-      mainnet: '0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
+      mainnet: '0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3',
       testnet: '',
     },
     decimals: 18,
@@ -429,8 +429,8 @@ const tokens = {
   wbnb: {
     symbol: 'wBNB',
     address: {
-      mainnet: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-      testnet: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
+      mainnet: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+      testnet: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
@@ -600,7 +600,7 @@ const tokens = {
   busd: {
     symbol: 'BUSD',
     address: {
-      mainnet: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      mainnet: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
       testnet: '',
     },
     decimals: 18,
@@ -690,7 +690,7 @@ const tokens = {
   ada: {
     symbol: 'ADA',
     address: {
-      mainnet: '0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -708,7 +708,7 @@ const tokens = {
   dot: {
     symbol: 'DOT',
     address: {
-      mainnet: '0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -726,7 +726,7 @@ const tokens = {
   link: {
     symbol: 'LINK',
     address: {
-      mainnet: '0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -735,7 +735,7 @@ const tokens = {
   usdt: {
     symbol: 'USDT',
     address: {
-      testnet: '0x55d398326f99059ff775485246999027b3197955',
+      testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       mainnet: '0x55d398326f99059ff775485246999027b3197955',
     },
     decimals: 18,
@@ -744,7 +744,7 @@ const tokens = {
   btcb: {
     symbol: 'BTCB',
     address: {
-      mainnet: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -789,7 +789,7 @@ const tokens = {
   bch: {
     symbol: 'BCH',
     address: {
-      mainnet: '0x8ff795a6f4d97e7887c79bea79aba5cc76444adf',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -807,7 +807,7 @@ const tokens = {
   uni: {
     symbol: 'UNI',
     address: {
-      mainnet: '0xbf5140a22578168fd562dccf235e5d43a02ce9b1',
+      mainnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
