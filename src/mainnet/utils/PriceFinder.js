@@ -14,11 +14,7 @@ class PriceFinder {
     return Promise.all(
       Object.keys(routers).map(async (routerName) => {
         try {
-          return await PriceFinder.getPrice(
-            routers[routerName],
-            tokenA,
-            tokenB
-          );
+          return await PriceFinder.getPrice(routers[routerName], tokenA, tokenB);
         } catch (error) {
           return;
         }
@@ -26,10 +22,20 @@ class PriceFinder {
     );
   }
 
-  static comparePrices(tokenA, tokenB, showDetail) {
+  static comparePrices(tokenA, tokenB, showDetail, showAll = false) {
     this.getPrices(tokenA, tokenB).then((prices) => {
+      let pricePancakeswap = prices.find(
+        (price) => price.router_name === 'PANCAKESWAP'
+      ).price_float;
+
+      let pricesFiltered = prices.filter((price) => {
+        if (price) {
+          if (price.price_float >= pricePancakeswap) return price;
+        }
+      });
+
       if (showDetail) {
-        console.log(prices);
+        console.log(showAll ? prices : pricesFiltered);
       }
 
       console.log('------------------------------------------------------');
@@ -45,9 +51,9 @@ class PriceFinder {
         ])
         .call()
         .then((res) => {
-          const price = new BN(web3.utils.fromWei(res[1], 'Ether'));
+          //const price = new BN(web3.utils.fromWei(res[1], 'Ether'));
           const price_str = web3.utils.fromWei(res[1], 'Ether');
-          const price_float = this.getFloat(price_str.toString(), 4);
+          const price_float = this.getFloat(price_str.toString(), 8);
 
           // console.log(
           //   `${router.name}       - ${tokenA.symbol} Price: ${price_str} ${tokenB.symbol} ${res}`
@@ -56,7 +62,7 @@ class PriceFinder {
           resolve({
             router_name: router.name,
             router_address: router.address,
-            price: price,
+            //price: price,
             price_str: price_str,
             price_float: price_float,
             tokenA_name: tokenA.symbol,

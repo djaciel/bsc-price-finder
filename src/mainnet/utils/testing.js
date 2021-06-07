@@ -32,11 +32,12 @@ const routers = require('./routers');
 
 //PriceFinder.comparePrices(tokens.wbnb, tokens.busd, true);
 
+//------------------------------
 let priceMonitor;
 let iterator = 0;
 
 async function monitorPrice() {
-  PriceFinder.comparePrices(tokens.wbnb, tokens.ada, true);
+  PriceFinder.comparePrices(tokens.wbnb, tokens.eth, true, false);
 }
 
 priceMonitor = setInterval(async () => {
@@ -44,3 +45,44 @@ priceMonitor = setInterval(async () => {
   await monitorPrice();
   iterator++;
 }, 10000);
+
+//------------------------------
+
+//PriceFinder.comparePrices(tokens.wbnb, tokens.ada, true, false);
+
+/*
+btc:
+  btcb
+
+eth:
+  eth
+  beth
+
+usdt:
+  usdt
+
+ada:
+  ada
+
+doge:
+  doge
+
+xrp:
+  xrp
+
+dot:
+  dot
+
+uni:
+  uni
+
+link:
+  link
+
+ltc:
+  ltc
+
+busd:
+  busd
+
+*/

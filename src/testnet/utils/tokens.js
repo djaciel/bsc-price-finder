@@ -600,8 +600,8 @@ const tokens = {
   busd: {
     symbol: 'BUSD',
     address: {
-      mainnet: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
-      testnet: '',
+      mainnet: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
+      testnet: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
     },
     decimals: 18,
     projectLink: 'https://www.paxos.com/busd/',
@@ -609,8 +609,8 @@ const tokens = {
   eth: {
     symbol: 'ETH',
     address: {
-      mainnet: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
-      testnet: '',
+      mainnet: '0x8babbb98678facc7342735486c851abd7a0d17ca',
+      testnet: '0x8babbb98678facc7342735486c851abd7a0d17ca',
     },
     decimals: 18,
     projectLink: 'https://ethereum.org/en/',
@@ -681,8 +681,8 @@ const tokens = {
   dai: {
     symbol: 'DAI',
     address: {
-      mainnet: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
-      testnet: '',
+      mainnet: '0x8a9424745056Eb399FD19a0EC26A14316684e274',
+      testnet: '0x8a9424745056Eb399FD19a0EC26A14316684e274',
     },
     decimals: 18,
     projectLink: 'http://www.makerdao.com/',
@@ -735,8 +735,8 @@ const tokens = {
   usdt: {
     symbol: 'USDT',
     address: {
-      testnet: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
-      mainnet: '0x55d398326f99059ff775485246999027b3197955',
+      testnet: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
+      mainnet: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
     },
     decimals: 18,
     projectLink: 'https://tether.to/',
