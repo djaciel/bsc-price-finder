@@ -12,6 +12,7 @@ const BN = web3.utils.BN;
 const PANCAKESWAP_ABI = require('../abis/routers/PANCAKESWAP_ABI');
 const PANCAKESWAP2_ABI = require('../abis/routers/PANCAKESWAP2_ABI');
 const HYPERSWAP_ABI = require('../abis/routers/HYPERSWAP_ABI');
+const BAKERYSWAP2_ABI = require('../abis/routers/BAKERYSWAP2_ABI');
 
 const routers = {
   PANCAKESWAP: {
@@ -22,6 +23,11 @@ const routers = {
     address: bscConstants.routers.PANCAKESWAP_ROUTER,
     name: 'PANCAKESWAP',
   },
+  HYPERSWAP: {
+    contract: new web3.eth.Contract(HYPERSWAP_ABI, bscConstants.routers.HYPERSWAP_ROUTER),
+    address: bscConstants.routers.HYPERSWAP_ROUTER,
+    name: 'HYPERSWAP',
+  },
   PANCAKESWAP2: {
     contract: new web3.eth.Contract(
       PANCAKESWAP2_ABI,
@@ -30,10 +36,13 @@ const routers = {
     address: bscConstants.routers.PANCAKESWAP2_ROUTER,
     name: 'PANCAKESWAP2',
   },
-  HYPERSWAP: {
-    contract: new web3.eth.Contract(HYPERSWAP_ABI, bscConstants.routers.HYPERSWAP_ROUTER),
-    address: bscConstants.routers.HYPERSWAP_ROUTER,
-    name: 'HYPERSWAP',
+  BAKERYSWAP2: {
+    contract: new web3.eth.Contract(
+      BAKERYSWAP2_ABI,
+      bscConstants.routers.BAKERYSWAP2_ROUTER
+    ),
+    address: bscConstants.routers.BAKERYSWAP2_ROUTER,
+    name: 'BAKERYSWAP2',
   },
 };
 
