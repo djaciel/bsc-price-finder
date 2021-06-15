@@ -30,17 +30,23 @@ const routers = require('./routers');
 
 // priceReader();
 
-//PriceFinder.comparePrices(tokens.wbnb, tokens.busd, true);
+PriceFinder.comparePrices(tokens.usdt, tokens.busd, true);
+PriceFinder.comparePrices(tokens.usdt, tokens.eth, true);
+PriceFinder.comparePrices(tokens.usdt, tokens.dai, true);
+PriceFinder.comparePrices(tokens.usdt, tokens.usdt, true);
 
-let priceMonitor;
-let iterator = 0;
+PriceFinder.comparePrices(tokens.usdt, tokens.btcb, true);
+PriceFinder.comparePrices(tokens.usdt, tokens.beth, true);
 
-async function monitorPrice() {
-  PriceFinder.comparePrices(tokens.wbnb, tokens.busd, true);
-}
+// let priceMonitor;
+// let iterator = 0;
 
-priceMonitor = setInterval(async () => {
-  console.log(`Iterator ${iterator}`);
-  await monitorPrice();
-  iterator++;
-}, 10000);
+// async function monitorPrice() {
+//   PriceFinder.comparePrices(tokens.wbnb, tokens.eth, true);
+// }
+
+// priceMonitor = setInterval(async () => {
+//   console.log(`Iterator ${iterator}`);
+//   await monitorPrice();
+//   iterator++;
+// }, 10000);

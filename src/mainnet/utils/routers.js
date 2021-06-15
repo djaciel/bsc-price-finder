@@ -18,6 +18,7 @@ const BAKERYSWAP_ABI = require('../abis/routers/BAKERYSWAP_ABI');
 const HYPERSWAP_ABI = require('../abis/routers/HYPERSWAP_ABI');
 const CHEESESWAP_ABI = require('../abis/routers/CHEESESWAP_ABI');
 const BURGERSWAP_ABI = require('../abis/routers/BURGERSWAP_ABI');
+const PANTHERSWAP_ABI = require('../abis/routers/PANTHERSWAP_ABI');
 
 const routers = {
   PANCAKESWAP: {
@@ -29,21 +30,23 @@ const routers = {
     name: 'PANCAKESWAP',
   },
   APESWAP: {
-    contract: new web3.eth.Contract(
-      APESWAP_ABI,
-      bscConstants.routers.APESWAP_ROUTER
-    ),
+    contract: new web3.eth.Contract(APESWAP_ABI, bscConstants.routers.APESWAP_ROUTER),
     address: bscConstants.routers.APESWAP_ROUTER,
     name: 'APESWAP',
   },
-  ICECREAM: {
+  PANTHERSWAP: {
     contract: new web3.eth.Contract(
-      ICECREAM_ABI,
-      bscConstants.routers.ICECREAM_ROUTER
+      PANTHERSWAP_ABI,
+      bscConstants.routers.PANTHERSWAP_ROUTER
     ),
-    address: bscConstants.routers.ICECREAM_ROUTER,
-    name: 'ICECREAM',
+    address: bscConstants.routers.PANTHERSWAP_ROUTER,
+    name: 'PANTHERSWAP',
   },
+  // ICECREAM: {
+  //   contract: new web3.eth.Contract(ICECREAM_ABI, bscConstants.routers.ICECREAM_ROUTER),
+  //   address: bscConstants.routers.ICECREAM_ROUTER,
+  //   name: 'ICECREAM',
+  // },
   // SHASHIMI: {
   //   contract: new web3.eth.Contract(
   //     SHASHIMI_ABI,
@@ -52,14 +55,11 @@ const routers = {
   //   address: bscConstants.routers.SHASHIMI_ROUTER,
   //   name: 'SHASHIMI',
   // },
-  JULSWAP: {
-    contract: new web3.eth.Contract(
-      JULSWAP_ABI,
-      bscConstants.routers.JULSWAP_ROUTER
-    ),
-    address: bscConstants.routers.JULSWAP_ROUTER,
-    name: 'JULSWAP',
-  },
+  // JULSWAP: {
+  //   contract: new web3.eth.Contract(JULSWAP_ABI, bscConstants.routers.JULSWAP_ROUTER),
+  //   address: bscConstants.routers.JULSWAP_ROUTER,
+  //   name: 'JULSWAP',
+  // },
   BAKERYSWAP: {
     contract: new web3.eth.Contract(
       BAKERYSWAP_ABI,
@@ -68,22 +68,19 @@ const routers = {
     address: bscConstants.routers.BAKERYSWAP_ROUTER,
     name: 'BAKERYSWAP',
   },
-  HYPERSWAP: {
-    contract: new web3.eth.Contract(
-      HYPERSWAP_ABI,
-      bscConstants.routers.HYPERSWAP_ROUTER
-    ),
-    address: bscConstants.routers.HYPERSWAP_ROUTER,
-    name: 'HYPERSWAP',
-  },
-  CHEESESWAP: {
-    contract: new web3.eth.Contract(
-      CHEESESWAP_ABI,
-      bscConstants.routers.CHEESESWAP_ROUTER
-    ),
-    address: bscConstants.routers.CHEESESWAP_ROUTER,
-    name: 'CHEESESWAP',
-  },
+  // HYPERSWAP: {
+  //   contract: new web3.eth.Contract(HYPERSWAP_ABI, bscConstants.routers.HYPERSWAP_ROUTER),
+  //   address: bscConstants.routers.HYPERSWAP_ROUTER,
+  //   name: 'HYPERSWAP',
+  // },
+  // CHEESESWAP: {
+  //   contract: new web3.eth.Contract(
+  //     CHEESESWAP_ABI,
+  //     bscConstants.routers.CHEESESWAP_ROUTER
+  //   ),
+  //   address: bscConstants.routers.CHEESESWAP_ROUTER,
+  //   name: 'CHEESESWAP',
+  // },
   BURGERSWAP: {
     contract: new web3.eth.Contract(
       BURGERSWAP_ABI,

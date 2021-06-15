@@ -735,8 +735,8 @@ const tokens = {
   usdt: {
     symbol: 'USDT',
     address: {
-      testnet: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
-      mainnet: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
+      testnet: '0xa11c8d9dc9b66e209ef60f0c8d969d3cd988782c',
+      mainnet: '0xa11c8d9dc9b66e209ef60f0c8d969d3cd988782c',
     },
     decimals: 18,
     projectLink: 'https://tether.to/',

@@ -10,66 +10,115 @@ const web3 = new Web3(
 const BN = web3.utils.BN;
 
 class PriceFinder {
-  static async getPrices(tokenA, tokenB) {
+  static async getPrices(mainRouterName, tokenA, tokenB, amount) {
     return Promise.all(
       Object.keys(routers).map(async (routerName) => {
         try {
-          return await PriceFinder.getPrice(routers[routerName], tokenA, tokenB);
+          return await PriceFinder.getPrice(
+            mainRouterName,
+            routers[routerName],
+            tokenA,
+            tokenB,
+            amount
+          );
         } catch (error) {
-          return;
+          return {
+            router_name: 'nada',
+            price_float: 0,
+          };
         }
       })
     );
   }
 
-  static comparePrices(tokenA, tokenB, showDetail, showAll = false) {
-    this.getPrices(tokenA, tokenB).then((prices) => {
-      let pricePancakeswap = prices.find(
-        (price) => price.router_name === 'PANCAKESWAP'
-      ).price_float;
+  static comparePrices(
+    mainRouterName,
+    amount,
+    tokenA,
+    tokenB,
+    showDetail,
+    showAll = false
+  ) {
+    this.getPrices(mainRouterName, tokenA, tokenB, amount).then((prices) => {
+      const mainRouter = prices.find(
+        (price) => price !== undefined && price.router_name === mainRouterName
+      );
 
-      let pricesFiltered = prices.filter((price) => {
-        if (price) {
-          if (price.price_float >= pricePancakeswap) return price;
+      if (mainRouter) {
+        const priceMainRouter = mainRouter.price_float;
+
+        const minPrice = mainRouter.min_price;
+
+        let pricesFiltered = prices
+          .filter((price) => {
+            return price.router_name !== 'nada' && price.price_float >= minPrice;
+          })
+          .map((price) => {
+            return {
+              ...price,
+              priceMainRouter,
+              minPriceMainRouter: minPrice,
+            };
+          });
+
+        if (showDetail) {
+          console.log(
+            `------------${mainRouter.tokenA_name} - ${mainRouter.tokenB_name}------------`
+          );
+          if (showAll) {
+            console.log(prices);
+          } else {
+            console.log(pricesFiltered.length > 0 ? pricesFiltered : 'Nothing :(');
+          }
         }
-      });
-
-      if (showDetail) {
-        console.log(showAll ? prices : pricesFiltered);
       }
-
-      console.log('------------------------------------------------------');
     });
   }
 
-  static async getPrice(router, tokenA, tokenB) {
+  static async getPrice(mainRouterName, router, tokenA, tokenB, amount) {
     return new Promise((resolve, reject) => {
       router.contract.methods
-        .getAmountsOut('1000000000000000000', [
-          tokenA.address.mainnet,
-          tokenB.address.mainnet,
-        ])
+        .getAmountsOut(amount, [tokenA.address.mainnet, tokenB.address.mainnet])
         .call()
         .then((res) => {
-          //const price = new BN(web3.utils.fromWei(res[1], 'Ether'));
           const price_str = web3.utils.fromWei(res[1], 'Ether');
           const price_float = this.getFloat(price_str.toString(), 8);
 
-          // console.log(
-          //   `${router.name}       - ${tokenA.symbol} Price: ${price_str} ${tokenB.symbol} ${res}`
-          // );
+          if (router.name === mainRouterName) {
+            router.contract.methods
+              .getAmountsIn(amount, [tokenB.address.mainnet, tokenA.address.mainnet])
+              .call()
+              .then((res) => {
+                const price_str2 = web3.utils.fromWei(res[0], 'Ether');
+                const price_float2 = this.getFloat(price_str2.toString(), 18);
 
-          resolve({
-            router_name: router.name,
-            router_address: router.address,
-            //price: price,
-            price_str: price_str,
-            price_float: price_float,
-            tokenA_name: tokenA.symbol,
-            tokenA_address: tokenA.address.mainnet,
-            tokenB_name: tokenB.symbol,
-            tokenB_address: tokenB.address.mainnet,
-          });
+                resolve({
+                  router_name: router.name,
+                  router_address: router.address,
+                  tokenA_name: tokenA.symbol,
+                  tokenA_address: tokenA.address.mainnet,
+                  tokenB_name: tokenB.symbol,
+                  tokenB_address: tokenB.address.mainnet,
+                  price_str: price_str,
+                  price_float: price_float,
+                  min_price: price_float2,
+                });
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          } else {
+            resolve({
+              router_name: router.name,
+              router_address: router.address,
+              tokenA_name: tokenA.symbol,
+              tokenA_address: tokenA.address.mainnet,
+              tokenB_name: tokenB.symbol,
+              tokenB_address: tokenB.address.mainnet,
+              price_str: price_str,
+              price_float: price_float,
+            });
+          }
         })
         .catch((error) => {
           reject(error);
